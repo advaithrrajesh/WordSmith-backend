@@ -35,7 +35,7 @@ The WordSmith backend manages user authentication, blog post creation, retrieval
 
 3. npm install
 
-4. Download the existing .env file or create with following content
+4. Download the existing .env file or create a new one with following code
    ```bash
    PORT=8080
    KEY=8fe77e6b1255326cd57bd02d28ad003f
