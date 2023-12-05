@@ -20,7 +20,7 @@ The WordSmith backend manages user authentication, blog post creation, retrieval
 - **MongoDB:** MongoDB serves as the database for storing user information and blog posts.
 - **Mongoose:** Mongoose is used as an ODM (Object Data Modeling) library for MongoDB.
 - **bcrypt:** bcrypt is used for hashing and salting passwords for secure storage.
-- **imgbb.com:** imgbb.com is used for hosting the cloud platform.
+- **imgbb.com:** imgbb.com is used for hosting the image assets.
 
 
 ## Getting Started
