@@ -12,7 +12,6 @@ The WordSmith backend manages user authentication, blog post creation, retrieval
 - **Blog Post Management:** CRUD operations for creating, editing, and retrieving blog posts.
 - **Search API:** API endpoint for searching blog posts based on titles, keywords, or content.
 - **Data Storage:** Integration with a database to store user information and blog posts.
-- **... (Add any other features specific to your backend)**
 
 ## Tech Stack
 
@@ -21,7 +20,6 @@ The WordSmith backend manages user authentication, blog post creation, retrieval
 - **MongoDB:** MongoDB serves as the database for storing user information and blog posts.
 - **Mongoose:** Mongoose is used as an ODM (Object Data Modeling) library for MongoDB.
 - **bcrypt:** bcrypt is used for hashing and salting passwords for secure storage.
-- **... (Add any other technologies used in your project)**
 
 ## Getting Started
 
