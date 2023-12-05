@@ -20,18 +20,27 @@ The WordSmith backend manages user authentication, blog post creation, retrieval
 - **MongoDB:** MongoDB serves as the database for storing user information and blog posts.
 - **Mongoose:** Mongoose is used as an ODM (Object Data Modeling) library for MongoDB.
 - **bcrypt:** bcrypt is used for hashing and salting passwords for secure storage.
+- **imgbb.com:** imgbb.com is used for hosting the cloud platform.
+
 
 ## Getting Started
 
-1. Clone the repository:
+1. Install Mongodb Compass . Create and Connect in Mongodb Compass to the default url : "mongodb://0.0.0.0:27017"
+
+
+2. Clone the repository:
 
    ```bash
    git clone https://github.com/your-username/WordSmith-backend.git
 
-2. Install Mongodb Compass 
-
 3. npm install
 
-4. node server.js
+4. Download the existing .env file or create with following content
+   ```bash
+   PORT=8080
+   KEY=8fe77e6b1255326cd57bd02d28ad003f
+   BASE_URL=mongodb://0.0.0.0:27017/testdb
 
-5. Backend will be running in the port 8080
+5. node server.js
+
+6. Backend will be running in the port 8080
