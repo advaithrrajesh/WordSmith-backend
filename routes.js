@@ -58,7 +58,7 @@ router.post('/api/loginuser', async (req, res) => {
 
 router.post('/api/createblogpost', async (req, res) => {
   try {
-    const { title, image, description, keywords, content,user_id } = req.body;
+    const { title, image, description, keywords, content, user_id } = req.body;
 
     // Create a new blog post
     const newBlogPost = new BlogPost({
@@ -79,5 +79,39 @@ router.post('/api/createblogpost', async (req, res) => {
     res.status(500).json({ success: false, message: 'Internal Server Error' });
   }
 });
+
+router.get('/api/fetchblogposts', async (req, res) => {
+  try {
+    // Fetch all blog posts
+    const blogPosts = await BlogPost.find();
+    res.json({ success: true, blogPosts });
+  } catch (error) {
+    console.error('Error fetching blog posts:', error);
+    res.status(500).json({ success: false, message: 'Internal Server Error' });
+  }
+});
+
+router.get('/api/searchblogs', async (req, res) => {
+  try {
+    const { query } = req.query;
+
+    // Use a regular expression to perform a case-insensitive search
+    const regexQuery = new RegExp(query, 'i');
+
+    // Search for blog posts where the title or keywords match the query
+    const searchResults = await BlogPost.find({
+      $or: [
+        { title: { $regex: regexQuery } },
+        { keywords: { $in: [regexQuery] } },
+      ],
+    });
+
+    res.json({ success: true, blogPosts: searchResults });
+  } catch (error) {
+    console.error('Error searching blog posts:', error);
+    res.status(500).json({ success: false, message: 'Internal Server Error' });
+  }
+});
+
 
 module.exports = router;

@@ -26,7 +26,8 @@ const blogPostSchema = new mongoose.Schema({
     },
     user_id: { 
         type: String, 
-        required: true
+        required: true,
+        unique:false
      }
 
 });
